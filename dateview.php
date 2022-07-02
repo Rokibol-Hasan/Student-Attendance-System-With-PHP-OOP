@@ -14,10 +14,10 @@ $student = new Student();
                     <div class="card-title">
                         <div class="heading-text">
                             <h3>Manage Attendence<h3>
-                            <hr class="line-indicator">
+                                    <hr class="line-indicator">
                         </div>
                         <h2>
-                            <a class="btn btn-info pull-right" href="index.php">View All</a>
+                            <a class="btn btn-info pull-right" href="index.php">Go To Attendance</a>
                         </h2>
                     </div>
                     <div class="current-date text-center">
@@ -44,7 +44,7 @@ $student = new Student();
                                         <td><a class="btn btn-info" href="studentview.php?dt=<?php echo $result['att_time'] ?>">View</a></td>
                                 <?php }
                             } ?>
-                                </tr>
+                                    </tr>
                         </table>
                     </form>
                 </div>

@@ -14,7 +14,7 @@ include "lib/student.php";
                         </div>
                         <h2>
                             <a class="btn btn-success" href="index.php">Go to Attendence</a>
-                            <a class="btn btn-info pull-right" href=" ">View All</a>
+                            <a class="btn btn-info pull-right" href="dateview.php ">View All</a>
                         </h2>
                     </div>
                 </div>
