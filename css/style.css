@@ -1,0 +1,79 @@
+.header-text {
+  color:white;
+}
+hr.line-indicator{
+  border:2px solid #0D6EFD;
+  width: 40px;
+
+
+}
+.outer-list {
+  vertical-align: middle;
+}
+
+.outer-list ul {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0px;
+}
+
+.outer-list ul li {
+  list-style: none;
+}
+.outer-list li {
+  list-style: numeric;
+}
+.title {
+  color: white;
+  background: #08c;
+  margin-top: 20px;
+  padding: 10px 5px;
+  text-align: center;
+}
+.attendence-title {
+  text-align: center;
+  color: #08c;
+  padding: 20px 0px;
+}
+.submit-button p {
+  text-align: right;
+}
+.left-sidebar-container {
+}
+.left-sidebar-title {
+  color: white;
+  background: #08c;
+  margin-top: 20px;
+  padding: 10px 5px;
+  text-align: center;
+}
+.left-sidebar p {
+  padding: 5px;
+  text-align: justify;
+}
+.profile-icon {
+  text-align: center;
+  color: #08c;
+  margin-top: 20px;
+}
+.profile-description {
+  text-align: center;
+  margin-top: 10px;
+}
+/* .profile-name{
+    text-align: center;
+
+}
+.profile-designation{
+    text-align: center;
+} */
+.log ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px;
+  margin: 10px 10px;
+}
+.log ul li a {
+  text-decoration: none;
+}
