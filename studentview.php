@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-                <div class="attendence-card card card-default p-3 my-3">
+                <div class="attendence-card card p-3 my-3">
                     <div class="card-title">
                         <?php
                         if (isset($updateAttendence)) {
