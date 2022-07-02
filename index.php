@@ -51,7 +51,8 @@ if (isset($_POST['submit'])) {
             <h2>
               <a class="btn btn-success" href="addstudent.php"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
                 Add Student</a>
-              <a class="btn btn-info pull-right" href="dateview.php"> View All</a>
+              <a class="btn btn-success pull-right" href="dateview.php"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
+                View All</a>
             </h2>
           </div>
           <div class="current-date text-center">

@@ -13,8 +13,10 @@ include "lib/student.php";
                                     <hr class="line-indicator">
                         </div>
                         <h2>
-                            <a class="btn btn-success" href="index.php">Go to Attendence</a>
-                            <a class="btn btn-info pull-right" href="dateview.php ">View All</a>
+                            <a class="btn btn-success" href="index.php"><i class="fa fa-list" aria-hidden="true"></i>
+                                Go to Attendence</a>
+                            <a class="btn btn-success pull-right" href="dateview.php "><i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
+                                View All</a>
                         </h2>
                     </div>
                 </div>
@@ -28,7 +30,7 @@ include "lib/student.php";
                     ?>
                     <form class="form-group card p-3" action="" method="post">
                         <?php
-                        if(isset($insertStudent)){
+                        if (isset($insertStudent)) {
                             echo $insertStudent;
                         }
                         ?>

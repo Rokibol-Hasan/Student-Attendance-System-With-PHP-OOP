@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
                                     <hr class="line-indicator">
                         </div>
                         <h2>
-                            <a class="btn btn-success" href="dateview.php">Back</a>
+                            <a class="btn btn-success" href="dateview.php"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Back</a>
                         </h2>
                     </div>
                     <div class="current-date text-center">
@@ -70,8 +70,12 @@ if (isset($_POST['submit'])) {
                                         <td><?php echo $result['name']; ?></td>
                                         <td><?php echo $result['roll']; ?></td>
                                         <td>
-                                            <input type="radio" class="form-check-input" name="attend[<?php echo $result['roll'] ?>]" value="present" <?php if ($result['attendence'] == 'present') {echo "checked";} ?>> P
-                                            <input type="radio" class="form-check-input" name="attend[<?php echo $result['roll'] ?>]"value="absent" <?php if ($result['attendence'] == 'absent') {echo "checked";}?>> A
+                                            <input type="radio" class="form-check-input" name="attend[<?php echo $result['roll'] ?>]" value="present" <?php if ($result['attendence'] == 'present') {
+                                                                                                                                                            echo "checked";
+                                                                                                                                                        } ?>> P
+                                            <input type="radio" class="form-check-input" name="attend[<?php echo $result['roll'] ?>]" value="absent" <?php if ($result['attendence'] == 'absent') {
+                                                                                                                                                            echo "checked";
+                                                                                                                                                        } ?>> A
                                         </td>
                                 <?php }
                             } ?>
