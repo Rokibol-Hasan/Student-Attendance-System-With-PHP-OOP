@@ -44,11 +44,13 @@ if (isset($_POST['submit'])) {
             ?>
             <div class='alert alert-danger' style="display:none" role='alert'>Alert: Attendence Missing!</div>
             <div class="heading-text">
-              <h3>Manage Attendence<h3>
+              <h3><i class="fa fa-list" aria-hidden="true"></i>
+                Manage Attendence<h3>
                   <hr class="line-indicator">
             </div>
             <h2>
-              <a class="btn btn-success" href="addstudent.php">Add Student</a>
+              <a class="btn btn-success" href="addstudent.php"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                Add Student</a>
               <a class="btn btn-info pull-right" href="dateview.php"> View All</a>
             </h2>
           </div>

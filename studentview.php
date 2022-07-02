@@ -77,7 +77,8 @@ if (isset($_POST['submit'])) {
                             } ?>
                                     </tr>
                         </table>
-                        <input class="btn btn-info pull-right" type="submit" name="submit" value="Update">
+
+                        <button class="btn btn-primary pull-right" type="submit" name="submit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Update</button>
                     </form>
                 </div>
             </div>

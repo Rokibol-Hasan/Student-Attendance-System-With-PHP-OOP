@@ -13,7 +13,8 @@ $student = new Student();
                 <div class="attendence-card card card-default p-3 my-3">
                     <div class="card-title">
                         <div class="heading-text">
-                            <h3>Manage Attendence<h3>
+                            <h3><i class="fa fa-calendar" aria-hidden="true"></i>
+                                See Attendance By Date<h3>
                                     <hr class="line-indicator">
                         </div>
                         <h2>
