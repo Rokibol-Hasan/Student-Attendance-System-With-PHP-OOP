@@ -18,13 +18,16 @@
             <div class="log">
                 <ul>
                     <li>
-                        <a class="login">Login</a>
+                        <a href="userlogin.php" class="login">Login</a>
                     </li>
                     <li>
                         <a class="logout">Logout</a>
                     </li>
                 </ul>
             </div>
+        </div>
+        <div class="new-sign-up my-3">
+            <h5><a href="register.php">Register Here</a></h5>
         </div>
     </div>
 </div>

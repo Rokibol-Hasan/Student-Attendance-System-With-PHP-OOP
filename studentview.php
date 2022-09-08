@@ -1,6 +1,5 @@
 <?php
 include "inc/header.php";
-include "lib/student.php";
 ?>
 <script type="text/javascript">
     $(document).ready(function() {
@@ -18,7 +17,6 @@ include "lib/student.php";
     });
 </script>
 <?php
-$student = new Student();
 $dt = $_GET['dt'];
 if (isset($_POST['submit'])) {
     $attendence = $_POST['attend'];

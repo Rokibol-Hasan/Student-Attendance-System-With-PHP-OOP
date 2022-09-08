@@ -1,7 +1,6 @@
 <?php
 $file_path = realpath(dirname(__FILE__));
 include_once($file_path.'/../lib/config.php');
-// include "lib/config.php";
 class Database
 {
     public $host   = DB_HOST;

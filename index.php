@@ -1,6 +1,5 @@
 <?php
 include "inc/header.php";
-include "lib/student.php";
 ?>
 <script type="text/javascript">
   $(document).ready(function() {
@@ -19,7 +18,6 @@ include "lib/student.php";
 </script>
 <?php
 $currentDate = date('Y-m-d');
-$student = new Student();
 if (isset($_GET['delstu'])) {
   $id = $_GET['delstu'];
   $delStudent = $student->deleteStudent($id);

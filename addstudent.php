@@ -22,7 +22,6 @@ include "lib/student.php";
                 </div>
                 <div class="card-body">
                     <?php
-                    $student = new Student();
                     if (isset($_POST['submit'])) {
                         $insertStudent = $student->insertStudent($_POST);
                     }

@@ -78,3 +78,13 @@ hr.line-indicator{
 .log ul li a {
   text-decoration: none;
 }
+.btn-info {
+  color: white !important;
+  
+}
+.new-sign-up{
+  text-align: center;
+}
+.new-sign-up h5>a{
+  text-decoration: none;
+}

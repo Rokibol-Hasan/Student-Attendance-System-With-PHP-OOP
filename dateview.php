@@ -1,10 +1,8 @@
 <?php
 include "inc/header.php";
-include "lib/student.php";
 ?>
 <?php
 $currentDate = date('Y-m-d');
-$student = new Student();
 ?>
 <section class="main-content">
     <div class="container">
