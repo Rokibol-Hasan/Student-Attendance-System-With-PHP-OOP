@@ -1,7 +1,7 @@
 <div class="col-md-3">
     <div class="profile-sidebar">
         <div class="right-sidebar-title title">
-            <h6 class="">Right Sidebar</h6>
+            <h6 class="">Profile</h6>
         </div>
         <div class="profile-inner card">
             <div class="profile-icon">
@@ -9,25 +9,49 @@
             </div>
             <div class="profile-description">
                 <div class="profile-name">
-                    <h3>Rakibul Hasan</h3>
+                    <h3><?php echo Session::get("managementName") ?></h3>
                 </div>
                 <div class="profile-designation">
-                    <p><i>Teacher</i></p>
+                    <p><i>
+                            <?php
+                            $roll = Session::get("managementRoll");
+                            if ($roll == "1") {
+                                echo "Teacher";
+                            } elseif ($roll == "2") {
+                                echo "Adminstrator";
+                            }
+
+                            ?>
+
+
+                        </i></p>
                 </div>
             </div>
+            <?php
+            if (isset($_GET['action']) && $_GET['action'] == "logout") {
+                Session::destroy();
+                header("Location:login.php");
+            }
+            ?>
             <div class="log">
                 <ul>
                     <li>
-                        <a href="userlogin.php" class="login">Login</a>
-                    </li>
-                    <li>
-                        <a class="logout">Logout</a>
+                        <?php
+                        $login = Session::get("managementLogin");
+                        if ($login == false) { ?>
+                            <a href="login.php">Login</a>
+                        <?php } else { ?>
+                            <a href="?action=logout">Logout</a>
+                        <?php } ?>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="new-sign-up my-3">
-            <h5><a href="register.php">Register Here</a></h5>
+
+            <?php if ($login == false) { ?>
+                <h5><a href="userregister.php">Register Here</a></h5>
+            <?php } ?>
         </div>
     </div>
 </div>

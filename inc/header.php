@@ -1,17 +1,10 @@
 <?php
+ob_start();
+include "lib/session.php";
 $filepath = realpath(dirname(__FILE__));
-include_once($filepath . "/../lib/session.php");
-Session::init();
-include_once($filepath . "/../lib/database.php");
+Session::checkSession();
 include_once($filepath . "/../lib/student.php");
-include_once($filepath . "/../lib/management.php");
-spl_autoload_register(function ($class) {
-    include_once "classes/" . $class . ".php";
-});
-$db = new Database();
 $student = new Student();
-$management = new Management();
-
 ?>
 
 <!DOCTYPE html>

@@ -88,4 +88,3 @@ if (isset($_POST['submit'])) {
         </div>
     </div>
 </section>
-<?php include "inc/footer.php"; ?>

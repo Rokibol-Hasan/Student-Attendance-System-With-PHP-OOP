@@ -2,8 +2,6 @@
 $file_path = realpath(dirname(__FILE__));
 include_once($file_path . '/database.php');
 
-
-
 class Student
 {
 

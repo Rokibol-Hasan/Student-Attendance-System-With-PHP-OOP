@@ -1,5 +1,7 @@
 <?php
 $filepath = realpath(dirname(__FILE__));
+include_once($filepath . "/../lib/session.php");
+Session::checkLogin();
 include_once($filepath . "/../lib/database.php");
 ?>
 <?php
@@ -34,10 +36,10 @@ class Management
             $msg = "<span class='error'>   This Email Already Exist </span>";
             return $msg;
         } else {
-            $query = "INSERT INTO tbl_customer (name,email,password,roll)VALUES('$name','$email','" . MD5($password) . "','$roll' )";
-            $insertCustomer = $this->db->insert($query);
-            if ($insertCustomer) {
-                echo "<script>alert('Registration successfull, Please login to your account.');window.location='userlogin.php'</script>";
+            $query = "INSERT INTO tbl_management (name,email,password,roll)VALUES('$name','$email','" . MD5($password) . "','$roll' )";
+            $insertmanagement = $this->db->insert($query);
+            if ($insertmanagement) {
+                echo "<script>alert('Registration successfull, Please login to your account.');window.location='login.php'</script>";
             }
         }
     }
@@ -45,53 +47,51 @@ class Management
     public function managementLogin($data)
     {
         $email = mysqli_real_escape_string($this->db->link, $data['email']);
-        $pass = md5($data['pass']);
-        if ($email == '' || $pass == '') {
+        $password = md5($data['password']);
+        if ($email == '' || $password == '') {
             $msg = "<span class='error'> Field Must Not Be Empty </span>";
             return $msg;
-        }
-        $query = "SELECT * FROM tbl_customer WHERE email = '$email' AND pass = '" . MD5($pass) . "'";
-        $result = $this->db->select($query);
-        if ($result != false) {
-            $value = $result->fetch_assoc();
-            Session::set("customerLogin", true);
-            Session::set("customerId", $value['id']);
-            Session::set("customerName", $value['name']);
-            header("Location:cart-user.php");
         } else {
-            $msg = "<span class='error'>   Email Or Password Not Matched </span>";
-            return $msg;
+            $query = "SELECT * FROM tbl_management WHERE email = '$email' AND password = '" . MD5($password) . "'";
+            $result = $this->db->select($query);
+            if ($result != false) {
+                $value = $result->fetch_assoc();
+                Session::set("managementLogin", true);
+                Session::set("managementId", $value['id']);
+                Session::set("managementName", $value['name']);
+                Session::set("managementRoll", $value['roll']);
+                header("Location:index.php");
+            } else {
+                $msg = "<span class='error'>   Email Or Password Not Matched </span>";
+                return $msg;
+            }
         }
     }
-    public function updateCustomerById($id, $data)
+    public function updatemanagementById($id, $data)
     {
         $name = mysqli_real_escape_string($this->db->link, $data['name']);
-        $city = mysqli_real_escape_string($this->db->link, $data['city']);
-        $zip = mysqli_real_escape_string($this->db->link, $data['zip']);
         $email = mysqli_real_escape_string($this->db->link, $data['email']);
-        $address = mysqli_real_escape_string($this->db->link, $data['address']);
-        $country = mysqli_real_escape_string($this->db->link, $data['country']);
-        $phone = mysqli_real_escape_string($this->db->link, $data['phone']);
-        $pass = md5($data['pass']);
-        if ($name == '' || $city == '' || $zip == '' || $email == '' || $address == '' || $country == '' || $phone == '' || $pass == '') {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $msg = "<span class='error'>   Email Is Not Valid </span>";
+            return $msg;
+        }
+        $password = mysqli_real_escape_string($this->db->link, md5($data['password']));
+        $roll = mysqli_real_escape_string($this->db->link, $data['roll']);
+        if ($name == '' || $email == '' || $password == '' || $roll == '') {
             $msg = "<span class='error'>   Field Must Not Be Empty </span>";
             return $msg;
         } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $msg = "<span class='error'>   Email Is Not Valid </span>";
             return $msg;
         } else {
-            $query = "UPDATE tbl_customer SET
+            $query = "UPDATE tbl_management SET
             name = '$name',
-            city = '$city',
-            zip = '$zip',
             email = '$email',
-            address = '$address',
-            country = '$country',
-            phone = '$phone',
-            pass = '" . MD5($pass) . "'
+            password = '" . MD5($password) . "',
+            roll = '$roll'
             WHERE id = '$id' ";
-            $updateCustomer = $this->db->update($query);
-            if ($updateCustomer) {
+            $updatemanagement = $this->db->update($query);
+            if ($updatemanagement) {
                 header("Location:profile.php");
             } else {
                 $msg = "<span class='success'>Profile Not Updated </span>";
@@ -99,18 +99,18 @@ class Management
             }
         }
     }
-    public function getCustomerById($customerId)
+    public function getmanagementById($managementId)
     {
-        $customerId = Session::get("customerId");
-        $query = "SELECT * FROM tbl_customer WHERE id = '$customerId'";
-        $getCustomerInfo = $this->db->select($query);
-        return $getCustomerInfo;
+        $managementId = Session::get("managementId");
+        $query = "SELECT * FROM tbl_management WHERE id = '$managementId'";
+        $getmanagementInfo = $this->db->select($query);
+        return $getmanagementInfo;
     }
-    public function getCustomerInfo()
+    public function getmanagementInfo()
     {
-        $customerId = Session::get("customerId");
-        $query = "SELECT * FROM tbl_customer WHERE id = '$customerId'";
-        $getCustomerInfo = $this->db->select($query);
-        return $getCustomerInfo;
+        $managementId = Session::get("managementId");
+        $query = "SELECT * FROM tbl_management WHERE id = '$managementId'";
+        $getmanagementInfo = $this->db->select($query);
+        return $getmanagementInfo;
     }
 }

@@ -54,4 +54,3 @@ $currentDate = date('Y-m-d');
         </div>
     </div>
 </section>
-<?php include "inc/footer.php"; ?>

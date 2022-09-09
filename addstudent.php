@@ -1,6 +1,5 @@
 <?php
 include "inc/header.php";
-include "lib/student.php";
 ?>
 <section class="main-content">
     <div class="container">
@@ -47,4 +46,3 @@ include "lib/student.php";
         </div>
     </div>
 </section>
-<?php include "inc/footer.php"; ?>
