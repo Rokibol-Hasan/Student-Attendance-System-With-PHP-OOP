@@ -12,9 +12,9 @@ include "inc/header.php";
                                     <hr class="line-indicator">
                         </div>
                         <h2>
-                            <a class="btn btn-success" href="index.php"><i class="fa fa-list" aria-hidden="true"></i>
+                            <a class="btn index" href="index.php"><i class="fa fa-list" aria-hidden="true"></i>
                                 Go to Attendence</a>
-                            <a class="btn btn-success pull-right" href="dateview.php "><i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
+                            <a class="btn index pull-right" href="dateview.php "><i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
                                 View All</a>
                         </h2>
                     </div>
@@ -37,7 +37,7 @@ include "inc/header.php";
                             <input type="text" class="form-control" placeholder="Enter Student Name" name="name" id="name" />
                             <label for="roll">Student Roll</label>
                             <input type="text" class="form-control" placeholder="Enter Student Roll" name="roll" id="roll" />
-                            <input type="submit" class="btn btn-primary pull-right my-3" value="Add Student" name="submit" />
+                            <input type="submit" class="btn index pull-right my-3" value="Add Student" name="submit" />
                         </div>
                     </form>
                 </div>

@@ -25,7 +25,7 @@ $student = new Student();
 <body>
     <section class="header">
         <header>
-            <nav class="nav justify-content-center navbar navbar-dark bg-primary">
+            <nav class="nav justify-content-center navbar navbar-dark">
                 <div class="header-text">
                     <h1>Student Attendence System</h1>
                 </div>

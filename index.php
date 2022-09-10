@@ -47,9 +47,9 @@ if (isset($_POST['submit'])) {
                   <hr class="line-indicator">
             </div>
             <h2>
-              <a class="btn btn-success" href="addstudent.php"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+              <a class="btn index" href="addstudent.php"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
                 Add Student</a>
-              <a class="btn btn-success pull-right" href="dateview.php"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
+              <a class="btn index pull-right" href="dateview.php"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
                 View All</a>
             </h2>
           </div>
@@ -86,7 +86,13 @@ if (isset($_POST['submit'])) {
                       <input type="radio" class="form-check-input" name="attend[<?php echo $result['roll'] ?>]" value="present"> P
                       <input type="radio" class="form-check-input" name="attend[<?php echo $result['roll'] ?>]" value="absent"> A
                     </td>
-                    <td><a class="btn btn-danger" href="?delstu=<?php echo $result['id']; ?>">Remove</a></td>
+                    <?php
+                    $roll = Session::get('managementRoll');
+                    if ($roll == '2') { ?>
+                      <td><a class="btn btn-danger" href="?delstu=<?php echo $result['id']; ?>">Remove</a></td>
+                    <?php }else {?>
+                      <td>No action required</td>
+                   <?php } ?>
                 <?php }
               } ?>
                   </tr>
@@ -96,7 +102,7 @@ if (isset($_POST['submit'])) {
                     </td>
                   </tr> -->
             </table>
-            <input class="btn btn-primary pull-right" type="submit" name="submit" value="Submit">
+            <input class="btn index pull-right" type="submit" name="submit" value="Submit">
           </form>
         </div>
       </div>

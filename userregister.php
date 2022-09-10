@@ -62,7 +62,7 @@ $management = new Management();
                                                 <label for="email">Email</label>
                                             </div>
                                             <div class="form-floating mb-3 col-md-6 flex-column d-flex">
-                                                <select class="form-select" aria-label="Default select example">
+                                                <select name="roll" class="form-select" aria-label="Default select example">
                                                     <option selected>Select Roll</option>
                                                     <option value="1">Teacher</option>
                                                     <option value="2">Adminstration</option>

@@ -16,7 +16,7 @@ $currentDate = date('Y-m-d');
                                     <hr class="line-indicator">
                         </div>
                         <h2>
-                            <a class="btn btn-info pull-right" href="index.php"><i class="fa fa-list" aria-hidden="true"></i>
+                            <a class="btn index pull-right" href="index.php"><i class="fa fa-list" aria-hidden="true"></i>
                                 Go To Attendance</a>
                         </h2>
                     </div>
@@ -41,7 +41,7 @@ $currentDate = date('Y-m-d');
                                         <td><?php echo  $x;
                                             $x++; ?></td>
                                         <td><?php echo $result['att_time']; ?></td>
-                                        <td><a class="btn btn-info" href="studentview.php?dt=<?php echo $result['att_time'] ?>"><i class="fa fa-eye" aria-hidden="true"></i>
+                                        <td><a class="btn index" href="studentview.php?dt=<?php echo $result['att_time'] ?>"><i class="fa fa-eye" aria-hidden="true"></i>
                                                 View</a></td>
                                 <?php }
                             } ?>

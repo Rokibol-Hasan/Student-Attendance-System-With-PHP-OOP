@@ -91,3 +91,10 @@ hr.line-indicator{
 .form-floating > .form-select {
   padding-top: 0px !important;
 }
+.btn.index{
+  background:#0088CC !important;
+  color:white;
+}
+.nav.justify-content-center.navbar.navbar-dark {
+  background: #08C;
+}
