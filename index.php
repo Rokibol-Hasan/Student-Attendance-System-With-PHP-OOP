@@ -90,9 +90,9 @@ if (isset($_POST['submit'])) {
                     $roll = Session::get('managementRoll');
                     if ($roll == '2') { ?>
                       <td><a class="btn btn-danger" href="?delstu=<?php echo $result['id']; ?>">Remove</a></td>
-                    <?php }else {?>
+                    <?php } else { ?>
                       <td>No action required</td>
-                   <?php } ?>
+                    <?php } ?>
                 <?php }
               } ?>
                   </tr>
