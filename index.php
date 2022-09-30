@@ -33,6 +33,23 @@ if (isset($_POST['submit'])) {
   <div class="container">
     <div class="row">
       <div class="col-md-9">
+        <div class="search-box mt-3">
+          <form method="POST" action="">
+            <table border="0" width="400px">
+              <tr>
+                <td colspan="2">
+                  <input type="text" class="form-control" placeholder="Search" name="search">
+                </td>
+              </tr>
+              <tr>
+                <td width="40%">
+                  <input type="submit" name="submit" class="form-control btn btn-info" value="Search">
+                </td>
+                <td></td>
+              </tr>
+            </table>
+          </form>
+        </div>
         <div class="attendence-card card card-default p-3 my-3">
           <div class="card-title">
             <?php
@@ -109,4 +126,7 @@ if (isset($_POST['submit'])) {
       <?php include "inc/right-sidebar.php"; ?>
     </div>
   </div>
+  <script type="text/javascript">
+    document.ready
+  </script>
 </section>

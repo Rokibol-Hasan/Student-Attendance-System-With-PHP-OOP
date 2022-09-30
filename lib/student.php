@@ -127,8 +127,10 @@ class Student
             return $msg;
         }
     }
-
-
-
+    public function search($value){
+        $query = "SELECT * FROM tbl_student WHERE username = '%$value%'";
+        $getResult = $this->db->select($query);
+        return $getResult;
+    }
 
 }
