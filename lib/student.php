@@ -78,7 +78,7 @@ class Student
             return $msg;
         } else {
             $msg = "<div class='alert alert-warning' role='alert'>Attendence Not Submitted</div>";
-            return $msg;
+             return $msg;
         }
     }
 
